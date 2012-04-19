@@ -1,8 +1,9 @@
 #Packages
 library( "gbm" );
+library( "ROCR" );
 
 #Settings
-GBM_TREES = 50000;
+GBM_TREES = 10000;
 
 
 
@@ -14,15 +15,20 @@ myGBM <- gbm( formula( myTrainSub ),
               interaction.depth = 11,
               n.minobsinnode = 10 );
 
-gbm.trainPredicted <- predict( myGBM,
-                               myTrainSub[,-1],
+gbm.validPredicted <- predict( myGBM,
+                               myValidSub[,-1],
                                type = "response",
                                n.trees = GBM_TREES );
-
-scoreGBM = logLoss( myTrain[,1], gbm.predicted );
-
 
 gbm.testPredicted <- predict( myGBM,
                           myTestSub,
                           type = "response",
                           n.trees = GBM_TREES );
+
+#measure performance
+scoreGBM <- logLoss( myValidSub[,1], abs( 0.0000001 - gbm.validPredicted ) );
+accuracyGBM <- sum( myValidSub[,1] == ( gbm.validPredicted > 0.5 ) ) / nrow( myValidSub );
+confusionGBM <- table( myValidSub$Activity, gbm.validPredicted > 0.5 );
+gbm.pred <- prediction( gbm.validPredicted, myValidSub[,1] );
+gbm.perf <- performance( gbm.pred, "tpr", "fpr" );
+
