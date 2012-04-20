@@ -4,7 +4,7 @@ library( "ROCR" );
 
 myRF <- randomForest( myTrainSub[,-1],
                       as.factor( myTrainSub[,1] ),
-                      ntree = 5000,
+                      ntree = 4000,
                       type="classification",
                       mtry=50);
 
