@@ -1,14 +1,14 @@
 
 ennet.validPredictions <- rep( 0, nrow( myValidSub ) );
 ennet.testPredictions <- rep( 0, nrow( myTestSub ) );
-NetsCount = 60;
+NetsCount = 40;
 for( i in 1:NetsCount )
 {
   ennet.myTrainSub <- myTrainSub[sample( 1:nrow(myTrainSub),nrow(myTrainSub), replace=TRUE ), ];
 
   myNNetEnsembled <- nnet( ennet.myTrainSub[,-1],
                            ennet.myTrainSub[,1],
-                           size = 70,
+                           size = 40,
                            decay=0.1,
                            maxit=600,
                            MaxNWts=15000 );
@@ -18,7 +18,8 @@ for( i in 1:NetsCount )
   ennet.temp <- predict( myNNetEnsembled, newdata=myTestSub, type="raw" );
   ennet.testPredictions <- ennet.testPredictions + ennet.temp;
   
-  write.csv( c( i ), "ennet_iter.csv", row.names=FALSE );
+  #write.csv( c( i ), "ennet_iter.csv", row.names=FALSE );
+  print( paste( "Iter:", as.character( i ) ) );
 }
 
 ennet.validPredictions <- ennet.validPredictions / NetsCount;

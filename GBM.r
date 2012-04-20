@@ -3,7 +3,7 @@ library( "gbm" );
 library( "ROCR" );
 
 #Settings
-GBM_TREES = 10000;
+GBM_TREES = 40000;
 
 
 
@@ -12,7 +12,7 @@ myGBM <- gbm( formula( myTrainSub ),
               distribution = "bernoulli",
               cv.folds = 4,
               n.trees = GBM_TREES,
-              interaction.depth = 11,
+              interaction.depth = 9,
               n.minobsinnode = 10 );
 
 gbm.validPredicted <- predict( myGBM,

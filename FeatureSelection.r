@@ -8,7 +8,7 @@ library( "FSelector" );
 #write.csv(weightsGainRatio, file ="findings/ratio.csv", row.names=TRUE, col.names=TRUE );
 #weightsUncertainty <- symmetrical.uncertainty( Activity~., myTrain );
 #write.csv(weightsUncertainty, file ="findings/symmetric.csv", row.names=TRUE, col.names=TRUE );
-#weightsRFI <- random.forest.importance( Activity~., myTrain );                                          
+weightsRFI <- random.forest.importance( Activity~., myTrain );                                          
 #write.csv( weightsRFI, file ="findings/rfi.csv", row.names=TRUE, col.names=TRUE );
 #weightsOneR <- oneR( Activity~., myTrain );
 #write.csv(weightsOneR, file ="findings/oner.csv", row.names=TRUE, col.names=TRUE );

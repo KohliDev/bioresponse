@@ -6,10 +6,12 @@ rx <- as.matrix( myTrainSub[,-1] );
 ry <- as.matrix( myTrainSub[,1], drop=FALSE );
 mySVM <- ksvm(rx,
               ry,
-              kernel="polydot",
+              kernel="rbfdot",
               type="C-svc",
               C=5,
               prob.model=TRUE );
+              
+
 
 
 svm.validPredictions <- predict( mySVM, myValidSub[,-1], type="probabilities" );

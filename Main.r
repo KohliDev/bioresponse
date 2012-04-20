@@ -15,9 +15,12 @@ setwd( "../" );
 source( "FeatureSelection.r" );
 
 #Add cluster feature
-source( "AddCluster.r" );
-#Execute predictors
 
-#source( "RandomForests.r" );
+#Execute predictors
+#Add Classification
+source( "AddKNNClassification.r" );
+
 source( "GBM.r" );
+source( "RandomForests.r" );
+source( "EnsembledSVM.r" );
 
