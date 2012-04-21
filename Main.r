@@ -19,10 +19,12 @@ source( "FeatureSelection.r" );
 #Execute predictors
 
 source( "EnsembledSVM.r" );
-source( "GBM.r" );
-
 
 #Add Classification
 source( "AddKNNClassification.r" );
+
+source( "GBM.r" );
+
+
 source( "RandomForests.r" );
 
