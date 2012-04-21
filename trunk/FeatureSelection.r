@@ -16,7 +16,7 @@ weightsRFI <- random.forest.importance( Activity~., myTrain );
 #Selection criteria
 intersectedFeatures <- 1*( weightsInfoGain > 0 );
 
-subsetFeatures <- cutoff.k( weightsRFI, 200 );
+subsetFeatures <- cutoff.k( weightsRFI, 300 );
 #subsetFeatures <- cutoff.k( weightsInfoGain, 50 );
 
 subsetFeaturesTarget <- c( "Activity", subsetFeatures );
