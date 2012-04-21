@@ -3,7 +3,7 @@ library( "gbm" );
 library( "ROCR" );
 
 #Settings
-GBM_TREES = 40000;
+GBM_TREES = 10000;
 
 
 
@@ -12,7 +12,7 @@ myGBM <- gbm( formula( myTrainSub ),
               distribution = "bernoulli",
               cv.folds = 4,
               n.trees = GBM_TREES,
-              interaction.depth = 9,
+              interaction.depth = 13,
               n.minobsinnode = 10 );
 
 gbm.validPredicted <- predict( myGBM,
@@ -21,9 +21,9 @@ gbm.validPredicted <- predict( myGBM,
                                n.trees = GBM_TREES );
 
 gbm.testPredicted <- predict( myGBM,
-                          myTestSub,
-                          type = "response",
-                          n.trees = GBM_TREES );
+                              myTestSub,
+                              type = "response",
+                              n.trees = GBM_TREES );
 
 #measure performance
 scoreGBM <- logLoss( myValidSub[,1], abs( 0.0000001 - gbm.validPredicted ) );

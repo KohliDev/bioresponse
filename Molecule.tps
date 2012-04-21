@@ -1,1 +1,19 @@
+\Files
+  F:\Projects\Kaggle\Molecule\AddClassification.r
+  F:\Projects\Kaggle\Molecule\AddCluster.r
+  F:\Projects\Kaggle\Molecule\Bagging.r
+  F:\Projects\Kaggle\Molecule\CombineResults.r
+  F:\Projects\Kaggle\Molecule\DataLoader.r
+  F:\Projects\Kaggle\Molecule\EnsembledNN.r
+  F:\Projects\Kaggle\Molecule\EnsembledSVM.r
+  F:\Projects\Kaggle\Molecule\FeatureSelection.r
+  F:\Projects\Kaggle\Molecule\GBM.r
+  F:\Projects\Kaggle\Molecule\Helpers.r
+  F:\Projects\Kaggle\Molecule\hui.r
+  F:\Projects\Kaggle\Molecule\KNN.r
+  F:\Projects\Kaggle\Molecule\Main.r
+  F:\Projects\Kaggle\Molecule\Molecule.tps
+  F:\Projects\Kaggle\Molecule\NNets.r
+  F:\Projects\Kaggle\Molecule\RandomForests.r
+  F:\Projects\Kaggle\Molecule\SVMs.r
 \generic group*
