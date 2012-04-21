@@ -1,4 +1,5 @@
 library(kernlab);
+library( ROCR );
 
 esvm.validPredictions <- rep( 0, nrow( myValidSub ) );
 esvm.testPredictions <- rep( 0, nrow( myTestSub ) );
