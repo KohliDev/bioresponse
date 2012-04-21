@@ -2,6 +2,7 @@ library( "clue" );
 library( "kernlab" );
 library( "class" );
 
+source( "KNN.r" );
 
 #Add KNN
 
