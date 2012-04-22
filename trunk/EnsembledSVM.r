@@ -3,7 +3,7 @@ library( ROCR );
 
 esvm.validPredictions <- rep( 0, nrow( myValidSub ) );
 esvm.testPredictions <- rep( 0, nrow( myTestSub ) );
-SVMsCount = 60;
+SVMsCount = 30;
 for( i in 1:SVMsCount )
 {
   esvm.myTrainSub <- myTrainSub[sample( 1:nrow(myTrainSub),nrow(myTrainSub), replace=TRUE ), ];

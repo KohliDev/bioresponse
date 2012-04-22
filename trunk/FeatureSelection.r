@@ -14,9 +14,9 @@ weightsRFI <- random.forest.importance( Activity~., myTrain );
 #write.csv(weightsOneR, file ="findings/oner.csv", row.names=TRUE, col.names=TRUE );
 
 #Selection criteria
-intersectedFeatures <- 1*( weightsInfoGain > 0 );
+#intersectedFeatures <- 1*( weightsInfoGain > 0 );
 
-subsetFeatures <- cutoff.k( weightsRFI, 300 );
+subsetFeatures <- cutoff.k( weightsRFI, 500 );
 #subsetFeatures <- cutoff.k( weightsInfoGain, 50 );
 
 subsetFeaturesTarget <- c( "Activity", subsetFeatures );

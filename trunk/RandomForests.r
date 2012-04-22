@@ -4,9 +4,9 @@ library( "ROCR" );
 
 myRF <- randomForest( myTrainSub[,-1],
                       as.factor( myTrainSub[,1] ),
-                      ntree = 4000,
+                      ntree = 7000,
                       type="classification",
-                      mtry=50);
+                      mtry=200);
 
 rf.predictions <- predict( myRF, myValidSub[,-1], type = "prob" );
 rf.testPredictions <- predict( myRF, myTestSub, type = "prob" );
