@@ -12,7 +12,7 @@ myGBM <- gbm( formula( myTrainSub ),
               distribution = "bernoulli",
               cv.folds = 4,
               n.trees = GBM_TREES,
-              interaction.depth = 13,
+              interaction.depth = 7,
               n.minobsinnode = 10 );
 
 gbm.validPredicted <- predict( myGBM,
