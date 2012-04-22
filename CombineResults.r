@@ -1,6 +1,6 @@
 
 #Combine
-combined.validPredictions <- ( gbm.validPredicted +  esvm.validPredictions ) / 2.0;
+combined.validPredictions <- ( rf.predictions[,2] +  esvm.validPredictions ) / 2.0;
 combined.testPredictions <- ( rf.testPredictions[,2] + svm.testPredictions[,2] +  ennet.testPredictions ) / 2.0;
 #Measure
 scoreCombined <-  logLoss( myValidSub[,1], abs( 0.000001 - combined.validPredictions ) );

@@ -10,7 +10,7 @@ for( i in 1:NetsCount )
                            ennet.myTrainSub[,1],
                            size = 40,
                            decay=0.1,
-                           maxit=600,
+                           maxit=200,
                            MaxNWts=15000 );
 
   ennet.temp <- predict( myNNetEnsembled, newdata= myValidSub[,-1], type="raw" );

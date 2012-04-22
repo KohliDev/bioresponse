@@ -3,7 +3,7 @@ library( "gbm" );
 library( "ROCR" );
 
 #Settings
-GBM_TREES = 10000;
+GBM_TREES = 20000;
 
 
 
